@@ -13,7 +13,8 @@ module.exports = {
   resolve: { extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'] },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].js'
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].chunk.js'
   },
   mode: 'development',
 /**
@@ -36,7 +37,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+        use: [{ loader: 'style-loader' }, {
+          loader: 'css-loader',
+          options: {
+            // CSS 파일에 해시를 추가
+            url: false,
+            importLoaders: 1,
+          }
+        }]
       }
     ]
   },
