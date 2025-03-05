@@ -1,0 +1,11 @@
+html, body {
+    background-color: #eee;
+    font-size: 14.4px;
+}
+* {
+    max-width: 100%;
+}
+h5 {
+    font-size: 16.6px;
+    font-weight: 600;
+}
