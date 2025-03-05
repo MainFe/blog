@@ -7,6 +7,7 @@
     "start": "webpack serve --progress --mode development",
     "build": "webpack",
     "deploy": "npm run build && gh-pages -d build",
+    "push": "git add .&&git commit -m 'update'&&git push",
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
     "lint": "eslint ./src",
